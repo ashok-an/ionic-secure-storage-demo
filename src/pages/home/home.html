@@ -1,14 +1,22 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      Ionic Blank
+    <ion-title ion-text text-center>
+      Marvel SuperHeroes
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content>
+  <ion-card (click)="onList()" padding-top>
+    <h1 ion-text text-center color="primary" style="font-size:5rem;">{{ storedData?.length }}</h1>
+    <h3 ion-text text-right padding-right padding-bottom>heroes found</h3>
+  </ion-card>
 </ion-content>
+
+<ion-footer>
+  <ion-fab bottom right padding>
+    <button ion-fab color="primary" (click)="onAdd()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+</ion-footer>
