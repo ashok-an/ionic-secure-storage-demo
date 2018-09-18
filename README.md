@@ -6,6 +6,15 @@ A sample CRUD app to demo the working of secure-storage cordova plugin
 **Notes**: 
 1. Need to run `npm install --save @ionic-native/secure-storage` explicitly
 2. Not sure if it works on ionic v4 (I have tested against ionic v3)
+3. In IOS if data is not shown try this:
+```
+cordova plugin add cordova-plugin-secure-storage
+
+https://evgenii.com/blog/sharing-keychain-in-ios/
+
+Add below line in config.xml
+<preference name="KeychainAccessibility" value="WhenUnlocked" />
+```
 
 TODO:
 ==
