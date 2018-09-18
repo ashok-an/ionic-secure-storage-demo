@@ -3,6 +3,9 @@ A sample CRUD app to demo the working of secure-storage cordova plugin
 
 **Objective**: To demonstrate the working of cordova-secure-storage plugin
 
+**Notes**: 
+1. Need to run `npm install --save @ionic-native/secure-storage` explicitly
+2. Not sure if it works on ionic v4 (I have tested against ionic v3)
 
 TODO:
 ==
