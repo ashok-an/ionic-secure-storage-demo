@@ -6,15 +6,31 @@
 -->
 <ion-header>
   <ion-navbar>
-    <ion-title ion-text text-center>List Page <ion-badge>{{ dataList.length }}</ion-badge></ion-title>
+    <ion-title ion-text text-center>List Page
+      <ion-badge>{{ dataList.length }}</ion-badge>
+    </ion-title>
   </ion-navbar>
 </ion-header>
 
 
 <ion-content padding>
+  <ion-item>
+    <ion-label stacked>First Superhero</ion-label>
+    <ionic-selectable item-content 
+      [(ngModel)]="name" 
+      [items]="nameList" 
+      itemValueField="char" 
+      itemTextField="char" 
+      [canSearch]="true"
+      (onChange)="onSearchUpdate($event)">
+    </ionic-selectable>
+  </ion-item>
+
   <ion-list>
     <ion-item *ngFor="let data of dataList" (click)="onDetails(data)" padding-bottom detail-push>
-      <h2>&nbsp;  <ion-icon name="contact" style="font-size:1.5rem;"></ion-icon> &nbsp; &nbsp; {{ data.name }}</h2>
+      <h2>&nbsp;
+        <ion-icon name="contact" style="font-size:1.5rem;"></ion-icon> &nbsp; &nbsp; {{ data.name }}
+      </h2>
     </ion-item>
   </ion-list>
 </ion-content>

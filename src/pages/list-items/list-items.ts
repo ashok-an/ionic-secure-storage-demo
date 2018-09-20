@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HelpersProvider } from '../../providers/helpers/helpers';
 import { ItemDetailsPage } from '../item-details/item-details';
+
+import { IonicSelectableComponent } from 'ionic-selectable';
 /**
  * Generated class for the ListItemsPage page.
  *
@@ -16,10 +18,20 @@ const KEY = 'top-secret';
   templateUrl: 'list-items.html',
 })
 export class ListItemsPage {
-  private dataList: any;
+  private dataList: any[];
+  private nameList = [{char: 'iron man'}, {char: 'captain america'}, 
+    {char: 'black widow'}, {char: 'the hulk'}, {char: 'thor'}, {char: 'hawkeye'}];
+  private name: Object;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public helpers: HelpersProvider) {
     this.dataList = this.navParams.get('data');
+  }
+
+  onSearchUpdate(event: {
+    component: IonicSelectableComponent,
+    value: any
+  }){
+      console.log('Selected: ' + JSON.stringify(event.value));
   }
 
   ionViewDidLoad() {
